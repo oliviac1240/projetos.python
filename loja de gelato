@@ -1,0 +1,125 @@
+print("Bem-Vindo a Loja de Gelados da Olivia Silva") 
+
+print("-----------------Cardápio-------------------") 
+
+print("--------------------------------------------") 
+
+print('---| Tamanho | Cupuaçu (CP) | Açai (AC) |---') 
+
+print('---|   P     |  R$ 9.00     | R$ 11.00  |---') 
+
+print('---|   M     |  R$ 14.00    | R$ 16.00  |---') 
+
+print('---|   G     |  R$ 18.00    | R$ 20.00  |---') 
+
+print("--------------------------------------------") 
+
+total_pedido = 0 
+
+ 
+
+precos = { 
+
+    'CP': {'P': 9, 'M': 14, 'G': 18}, 
+
+    'AC': {'P': 11, 'M': 16, 'G': 20} 
+
+} 
+
+ 
+
+ 
+
+def ob_sabor(): 
+
+    while True: 
+
+        sabor = input("Entre com o sabor desejado (CP/AC): ").upper() 
+
+        if sabor == 'CP' or sabor == 'AC': 
+
+            return sabor 
+
+        else: 
+
+            print("Sabor inválido. Tente novamente") 
+
+ 
+
+ 
+
+def ob_tamanho(): 
+
+    while True: 
+
+        tamanho = input("Entre com o tamanho desejado (P/M/G): ").upper() 
+
+        if tamanho in ['P', 'M', 'G']: 
+
+            return tamanho 
+
+        else: 
+
+            print("Tamanho inválido. Tente novamente") 
+
+ 
+
+ 
+
+def realizar_pedido(): 
+
+    sabor = ob_sabor() 
+
+    tamanho = ob_tamanho() 
+
+     
+
+    
+
+    valor = precos[sabor][tamanho] 
+
+    print(f"Você pediu um {sabor} no tamanho {tamanho}: R$ {valor:.2f}") 
+
+    return valor 
+
+ 
+
+ 
+
+def main(): 
+
+    total = 0   
+
+     
+
+    while True: 
+
+        valor_pedido = realizar_pedido() 
+
+        total += valor_pedido   
+
+        
+
+        continuar = input("Deseja mais alguma coisa? (S/N): ").upper() 
+
+        if continuar == 'S': 
+
+            continue   
+
+        elif continuar == 'N': 
+
+            break   
+
+     
+
+     
+
+    print(f"O valor total a ser pago: R$ {total:.2f}") 
+
+ 
+
+ 
+
+if __name__ == "__main__": 
+
+    main() 
