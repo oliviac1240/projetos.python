@@ -1,0 +1,57 @@
+print("Bem-vindo a Loja da Olívia Silva") 
+
+ 
+
+valor_unitario = float(input("Entre com o valor do produto: ")) 
+
+quantidade = int(input("Entre com a quantidade do produto: ")) 
+
+ 
+
+valor_total_sem_desconto = valor_unitario * quantidade 
+
+print(f"Valor SEM desconto: R$ {valor_total_sem_desconto:.2f}") 
+
+ 
+
+desconto_percentual = 0 
+
+ 
+
+if valor_total_sem_desconto < 2500: 
+
+    
+
+    desconto_percentual = 0 
+
+elif 2500 <= valor_total_sem_desconto < 6000: 
+
+     
+
+    desconto_percentual = 4 
+
+elif 6000 <= valor_total_sem_desconto < 10000: 
+
+    
+
+    desconto_percentual = 7 
+
+else: 
+
+     
+
+    desconto_percentual = 11 
+
+ 
+
+ 
+
+valor_desconto = valor_total_sem_desconto * (desconto_percentual / 100) 
+
+ 
+
+valor_total_com_desconto = valor_total_sem_desconto - valor_total_com_desconto 
+
+ 
+
+print(f"Valor COM desconto: R$ {valor_total_sem_desconto-valor_total_com_desconto:.2f}") 
